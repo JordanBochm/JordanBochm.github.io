@@ -21,14 +21,16 @@
         }
         header {
             text-align: center;
-            padding: 4rem 1rem;
+            /* AJUSTE: Reduje el padding para subir todo un poco */
+            padding: 3rem 1rem 2rem 1rem;
             background: linear-gradient(to bottom, #1e293b, #0f172a);
         }
         h1 { margin: 0; font-size: 2.5rem; color: #fff; }
         h2 { color: var(--accent-color); border-bottom: 2px solid var(--card-bg); padding-bottom: 0.5rem; }
         .subtitle { color: #94a3b8; font-size: 1.2rem; margin-top: 10px; }
         
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        /* AJUSTE: Reduje el padding superior del contenedor */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem 2rem 2rem; }
         
         /* Botones */
         .btn {
@@ -39,7 +41,7 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            margin-top: 15px; /* Ajustado para que se vea bien con el texto */
+            margin-top: 15px;
         }
         .btn:hover { background-color: #7dd3fc; }
 
@@ -71,11 +73,11 @@
     <header>
         <h1>Jordi Bochm</h1>
         <div class="subtitle">Ingeniero de Software Backend | Datos y Arquitectura</div>
-        </header>
+    </header>
 
     <div class="container">
         
-        <section>
+        <section style="margin-top: 1rem;">
             <h2>Sobre Mí</h2>
             <p>
                 ¡Hola! Soy un Ingeniero de Software especializado en <strong>Arquitectura Backend</strong> y <strong>Gestión de Datos</strong>, radicado en Toluca. 
@@ -83,11 +85,12 @@
                 Me apasiona lo que sucede <em>detrás de escena</em>: la optimización de servidores, la integridad de las bases de datos y la seguridad informática.
             </p>
             
-            <div style="margin-top: 2rem; text-align: center; background-color: #1e293b; padding: 1.5rem; border-radius: 8px;">
-                <p style="font-style: italic; color: #94a3b8; margin-bottom: 0.5rem;">
-                    "Para conocer mis proyectos a lo largo de mi carrera universitaria, te invito a que lo cheques :)"
+            <div style="margin-top: 2rem; text-align: center; background-color: #1e293b; padding: 2rem; border-radius: 8px; border: 1px solid #334155;">
+                <p style="font-size: 1.05rem; color: #cbd5e1; margin-bottom: 0.5rem;">
+                    "La mejor forma de conocer a un ingeniero es a través de su código. <br>
+                    Te invito a explorar la evolución técnica de mis proyectos en mi repositorio:"
                 </p>
-                <a href="https://github.com/JordanBochm" class="btn">Ver mi GitHub</a>
+                <a href="https://github.com/JordanBochm" class="btn">Ver Código en GitHub</a>
             </div>
         </section>
 
