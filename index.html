@@ -44,7 +44,7 @@
         }
         .btn:hover { background-color: #7dd3fc; }
 
-        /* Grid de Tarjetas (Reutilizable para Materias y Certificaciones) */
+        /* Grid de Tarjetas */
         .roadmap-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -62,9 +62,20 @@
         .course-title { font-weight: bold; color: #fff; margin-bottom: 0.5rem; display: block;}
         .course-tech { font-size: 0.85rem; color: #94a3b8; background: #334155; padding: 2px 8px; border-radius: 12px;}
 
-        /* Footer */
+        /* Footer y Nota Final */
         footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; }
         a { color: var(--accent-color); }
+        
+        /* Estilo para la nota final */
+        .wip-note {
+            margin-top: 4rem;
+            padding: 1.5rem;
+            border: 1px dashed #475569;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgba(30, 41, 59, 0.5);
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
@@ -101,25 +112,23 @@
             </p>
 
             <div class="roadmap-grid">
-                
                 <div class="course-card">
                     <span class="course-title">Programación Backend en PHP y Laravel</span>
                     <span class="course-tech">Udemy</span>
                     <p>Dominio de fundamentos Backend, arquitectura MVC, migraciones de base de datos y creación de APIs RESTful escalables.</p>
                 </div>
-
-                </div>
+            </div>
 
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">Evidencia documental de mis cursos y certificaciones:</p>
                 <a href="certificaciones.pdf" target="_blank" class="btn" style="background-color: #1e293b; color: #94a3b8; border: 1px solid #334155; font-size: 0.9rem;">
-                    📜 Ver Credenciales y Diplomas (PDF)
+                    Ver Credenciales y Diplomas (PDF)
                 </a>
             </div>
         </section>
 
         <section style="margin-top: 3rem;">
-            <h2>🎓 Trayectoria Académica</h2>
+            <h2>Trayectoria Académica</h2>
             <p>
                 Durante mi formación universitaria, construí una base técnica sólida para afrontar proyectos de alta complejidad. 
                 A continuación, presento las materias que han sido pilares en mi desarrollo y en las que continúo profundizando, 
@@ -163,11 +172,22 @@
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">¿Necesitas ver el detalle de créditos y calificaciones?</p>
                 <a href="mapa_curricular.pdf" target="_blank" class="btn" style="background-color: #1e293b; color: #94a3b8; border: 1px solid #334155; font-size: 0.9rem;">
-                    📄 Ver Mapa Curricular Completo (PDF)
+                    Ver Mapa Curricular Completo (PDF)
                 </a>
             </div>
 
         </section>
+
+        <div class="wip-note">
+            <strong>Estado: Refactorizando en Producción</strong><br><br>
+            Esta página sigue la filosofía del buen software: nunca está "terminada", solo está en su mejor versión <em>por ahora</em>.
+            <br>
+            Siempre estoy agregando nuevos proyectos, optimizando código o aprendiendo un nuevo framework.
+            <br>
+            <span style="color: #94a3b8; font-style: italic;">(Si encuentras un error, digamos que es una "feature" no documentada).</span>
+            <br><br>
+            <strong>¡Vuelve pronto para ver el siguiente <code>git commit</code>!</strong>
+        </div>
 
     </div>
 
