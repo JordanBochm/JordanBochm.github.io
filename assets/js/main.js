@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         try {
             localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-        } catch (error) {
+        } catch (_error) {
             // Falla silenciosa si localStorage esta restringido.
         }
     });

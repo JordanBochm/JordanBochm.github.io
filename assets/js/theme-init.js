@@ -18,7 +18,7 @@
         } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
             root.setAttribute('data-theme', 'light');
         }
-    } catch (error) {
+    } catch (_error) {
         // Almacenamiento no disponible (ej. modo incognito estricto).
         // Se degrada de forma silenciosa asumiendo el tema por defecto (oscuro).
     }

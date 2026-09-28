@@ -1,7 +1,7 @@
-const globals = require('globals');
-const pluginJs = require('@eslint/js');
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 
-module.exports = [
+export default [
     {
         languageOptions: {
             ecmaVersion: 2021,
@@ -19,5 +19,8 @@ module.exports = [
             'prefer-const': 'error',
             'eqeqeq': 'error'
         }
+    },
+    {
+        ignores: ['eslint.config.js']
     }
 ];
