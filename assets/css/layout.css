@@ -1,0 +1,44 @@
+/**
+ * @file layout.css
+ * @description Define la estructura macro de la pagina (header, footer, contenedores principales y secciones).
+ * @note NO debe contener estilos finos de componentes internos (como tarjetas o botones).
+ */
+
+/* ============================================
+   GRID & CONTAINERS
+   ============================================ */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+    padding: var(--space-12) 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+/* ============================================
+   HEADER & FOOTER MACRO
+   ============================================ */
+.site-header {
+    background: radial-gradient(ellipse at top, var(--bg-secondary) 0%, var(--bg-primary) 70%);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-16) var(--space-6) var(--space-12);
+    position: relative;
+    text-align: center;
+}
+
+.site-footer {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: var(--space-10) var(--space-6);
+    text-align: center;
+}

@@ -1,0 +1,331 @@
+/**
+ * @file components.css
+ * @description Define los estilos modulares de componentes reutilizables (tarjetas, botones, etiquetas, grid de habilidades) siguiendo la convencion BEM.
+ * @note NO debe contener resets globales ni selectores de maquetacion macro (como .container).
+ */
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+.section__title {
+    border-bottom: 2px dashed var(--border);
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-2);
+}
+
+/* ============================================
+   HEADER COMPONENTS
+   ============================================ */
+.site-header__name {
+    color: var(--text-primary);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.3;
+    margin-bottom: var(--space-1);
+}
+
+.site-header__role {
+    color: var(--text-secondary);
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    font-weight: 400;
+    margin-bottom: var(--space-6);
+}
+
+.site-header__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+    list-style: none;
+}
+
+.site-header__link {
+    align-items: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    display: inline-flex;
+    font-size: 0.85rem;
+    font-weight: 500;
+    gap: var(--space-2);
+    min-height: 44px; /* Altura minima táctil WCAG */
+    padding: var(--space-2) var(--space-4);
+    transition: all var(--transition);
+}
+
+.site-header__link:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 0 12px var(--accent-glow);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.site-header__link--primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+.site-header__link--primary:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 0 12px var(--accent-glow);
+    color: var(--bg-primary);
+}
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+.theme-toggle {
+    align-items: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    line-height: 0;
+    min-height: 44px;
+    min-width: 44px;
+    padding: var(--space-2);
+    position: absolute;
+    right: var(--space-6);
+    top: var(--space-4);
+    transition: all var(--transition);
+}
+
+.theme-toggle:hover {
+    border-color: var(--border-hover);
+    color: var(--accent);
+}
+
+.theme-toggle__icon--sun { display: none; }
+[data-theme="light"] .theme-toggle__icon--sun { display: block; }
+[data-theme="light"] .theme-toggle__icon--moon { display: none; }
+
+/* ============================================
+   ICONS
+   ============================================ */
+.icon {
+    fill: currentColor;
+    flex-shrink: 0;
+    height: 16px;
+    width: 16px;
+}
+
+.icon--lg {
+    height: 18px;
+    width: 18px;
+}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about__text {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* ============================================
+   PROJECT CARDS
+   ============================================ */
+.project-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+    transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.project-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+.project-card__title {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.project-card__problem, 
+.project-card__role {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.project-card__role strong {
+    color: var(--text-primary);
+}
+
+.project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.project-card__links {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.project-card__link {
+    align-items: center;
+    display: inline-flex;
+    font-size: 0.85rem;
+    font-weight: 500;
+    gap: var(--space-1);
+}
+
+.project-card__result {
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    padding-top: var(--space-3);
+}
+
+/* ============================================
+   TAGS
+   ============================================ */
+.tag {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 4px 12px;
+}
+
+/* ============================================
+   SKILLS
+   ============================================ */
+.skills__grid {
+    align-items: stretch;
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.skill-group {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-5);
+    transition: border-color var(--transition);
+}
+
+.skill-group:hover {
+    border-color: var(--border-hover);
+}
+
+.skill-group__title {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+}
+
+.skill-group__list {
+    flex-grow: 1;
+    list-style: none;
+}
+
+.skill-group__item {
+    align-items: center;
+    color: var(--text-secondary);
+    display: flex;
+    font-size: 0.9rem;
+    gap: var(--space-2);
+    justify-content: space-between;
+    padding: var(--space-1) 0;
+}
+
+.skill-group__level {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    white-space: nowrap;
+}
+
+/* ============================================
+   EDUCATION & CERTIFICATIONS
+   ============================================ */
+.education__item {
+    margin-bottom: var(--space-6);
+}
+
+.education__item:last-child {
+    margin-bottom: 0;
+}
+
+.education__title {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.education__meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: var(--space-2);
+}
+
+.education__text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.certification__line {
+    align-items: center;
+    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    gap: var(--space-2);
+}
+
+.certification__platform {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 2px 8px;
+}
+
+/* ============================================
+   MISC COMPONENTS
+   ============================================ */
+.link--inline {
+    align-items: center;
+    display: inline-flex;
+    font-size: 0.85rem;
+    gap: var(--space-1);
+    margin-top: var(--space-2);
+}
+
+.site-footer__note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-3);
+}

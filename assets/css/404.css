@@ -1,0 +1,33 @@
+/**
+ * @file 404.css
+ * @description Estilos especificos para la pagina de error 404.
+ */
+
+.error-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+}
+
+.error-code {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: var(--space-4);
+}
+
+.error-title {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: var(--space-2);
+}
+
+.error-message {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+}

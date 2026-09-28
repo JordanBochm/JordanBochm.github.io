@@ -1,0 +1,98 @@
+/**
+ * @file base.css
+ * @description Reseteo de estilos nativos, tipografia global y utilidades estructurales puras.
+ * @note NO debe contener estilos especificos de componentes del layout, unicamente etiquetas globales y modificadores abstractos.
+ */
+
+/* ============================================
+   RESET
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+/* ============================================
+   TYPOGRAPHY & LINKS
+   ============================================ */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* Foco visible para navegacion por teclado (WCAG) */
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+code {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    padding: 2px 6px;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.visually-hidden {
+    /* NOTA: El uso de !important aqui es legitimo y obligatorio porque esta es una clase utilitaria de fuerza bruta 
+       destinada a sobreescribir cualquier display, position o visibilidad previa sin importar la especificidad del componente original. */
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Enlace oculto para saltar directamente al contenido (A11y) */
+.skip-link {
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: var(--space-2);
+    position: absolute;
+    left: 0;
+    top: -40px;
+    z-index: 100;
+    transition: top var(--transition);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.text-justify {
+    max-width: 68ch; /* 68 caracteres limitan el ancho visual para evitar fatiga ocular */
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+}

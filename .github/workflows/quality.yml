@@ -1,0 +1,39 @@
+name: Quality Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint JavaScript
+        run: npm run lint
+
+      - name: Validate HTML
+        run: npm run validate:html
+
+      - name: Check Links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # Ignoramos LinkedIn porque a menudo devuelve 429 Too Many Requests o 999 a bots.
+          # Ignoramos jordanbochm.github.io porque al ejecutar este check pre-deploy, 
+          # la versión viva del sitemap, og:image y canonical tags aún no tiene los últimos cambios 
+          # y daría falsos errores de URL no encontrada.
+          args: --verbose --no-progress './**/*.html' --exclude 'linkedin.com' --exclude 'jordanbochm.github.io'
+          fail: true

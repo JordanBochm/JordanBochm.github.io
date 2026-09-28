@@ -1,199 +1,325 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jordi Bochm | Ingeniero de Software Backend</title>
-    <style>
-        
-        :root {
-            --bg-color: #0f172a;
-            --text-color: #e2e8f0;
-            --accent-color: #38bdf8; /* Azul Claro */
-            --card-bg: #1e293b;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            line-height: 1.6;
-        }
-        header {
-            text-align: center;
-            padding: 3rem 1rem 2rem 1rem;
-            background: linear-gradient(to bottom, #1e293b, #0f172a);
-        }
-        h1 { margin: 0; font-size: 2.5rem; color: #fff; }
-        h2 { color: var(--accent-color); border-bottom: 2px solid var(--card-bg); padding-bottom: 0.5rem; }
-        .subtitle { color: #94a3b8; font-size: 1.2rem; margin-top: 10px; }
-        
-        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem 2rem 2rem; }
-        
-        /* Botones */
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #0f172a;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover { background-color: #7dd3fc; }
+    <title>Jordi Bochm | Ingeniero en Software &mdash; Backend y Gesti&oacute;n de Activos TI</title>
+    <meta name="description" content="Portafolio de Jordi Bochm &mdash; Ingeniero en Software. Backend e integraciones de APIs. Toluca, M&eacute;xico.">
+    <meta name="author" content="Jordi Bochm">
+    <meta name="theme-color" content="#0f172a">
+    
+    <!-- CSP: Restringe fuentes, scripts e imagenes para seguridad estática -->
+    <!-- default-src 'none': Por defecto bloquea todo lo que no este permitido explicitamente -->
+    <!-- script-src 'self': Permite scripts alojados en este mismo origen -->
+    <!-- style-src 'self' https://fonts.googleapis.com: Permite CSS de este origen y de Google Fonts -->
+    <!-- font-src https://fonts.gstatic.com: Permite cargar las fuentes desde Google Fonts -->
+    <!-- img-src 'self' data:: Permite imagenes locales y formato data: (usado en el favicon) -->
+    <!-- base-uri 'self': Previene ataques de inyeccion de tag base -->
+    <!-- form-action 'none': Impide envios de formularios ya que es un sitio estatico -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'none';">
+    
+    <link rel="canonical" href="https://jordanbochm.github.io/">
 
-        /* Grid de Tarjetas */
-        .roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .course-card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
-            transition: transform 0.2s;
-        }
-        .course-card:hover { transform: translateY(-5px); }
-        .course-title { font-weight: bold; color: #fff; margin-bottom: 0.5rem; display: block;}
-        .course-tech { font-size: 0.85rem; color: #94a3b8; background: #334155; padding: 2px 8px; border-radius: 12px;}
+    <!-- Open Graph -->
+    <meta property="og:title" content="Jordi Bochm | Ingeniero en Software &mdash; Backend y Gesti&oacute;n de Activos TI">
+    <meta property="og:description" content="Ingeniero en Software. Backend e integraciones de APIs. Toluca, M&eacute;xico.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jordanbochm.github.io/">
+    <meta property="og:image" content="https://jordanbochm.github.io/og-image.jpg">
+    <meta property="og:locale" content="es_MX">
 
-        /* Footer y Nota Final */
-        footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; }
-        a { color: var(--accent-color); }
-        
-        /* Estilo para la nota final */
-        .wip-note {
-            margin-top: 4rem;
-            padding: 1.5rem;
-            border: 1px dashed #475569;
-            border-radius: 10px;
-            text-align: center;
-            background-color: rgba(30, 41, 59, 0.5);
-            font-size: 0.95rem;
-        }
-    </style>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jordi Bochm | Ingeniero en Software &mdash; Backend y Gesti&oacute;n de Activos TI">
+    <meta name="twitter:description" content="Ingeniero en Software. Backend e integraciones de APIs. Toluca, M&eacute;xico.">
+    <meta name="twitter:image" content="https://jordanbochm.github.io/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230f172a'/><text x='50' y='68' font-family='system-ui' font-size='48' font-weight='bold' fill='%2338bdf8' text-anchor='middle'>JB</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jordi Bochm",
+      "jobTitle": "Ingeniero en Software",
+      "url": "https://jordanbochm.github.io/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toluca",
+        "addressCountry": "MX"
+      },
+      "sameAs": [
+        "https://github.com/JordanBochm",
+        "https://www.linkedin.com/in/jordibochm"
+      ]
+    }
+    </script>
+
+    <!-- Script en linea sin dependencias (theme-init) para evitar FOUC de tema -->
+    <script src="assets/js/theme-init.js"></script>
 </head>
-<body>
 
-    <header>
-        <h1>Jordi Bochm</h1>
-        <div class="subtitle">Ingeniero de Software Backend | Datos y Arquitectura</div>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+    <!-- ============================================ -->
+    <!-- HEADER -->
+    <!-- ============================================ -->
+    <header class="site-header">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema claro/oscuro" type="button" aria-pressed="false">
+            <svg class="icon icon--lg theme-toggle__icon--moon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-moon"></use></svg>
+            <svg class="icon icon--lg theme-toggle__icon--sun" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-sun"></use></svg>
+        </button>
+
+        <h1 class="site-header__name">Jordi Bochm</h1>
+        <p class="site-header__role">Ingeniero en Software &middot; Backend e integraciones de APIs &middot; Toluca, M&eacute;xico</p>
+
+        <nav aria-label="Enlaces de contacto">
+            <ul class="site-header__links">
+                <li>
+                    <a href="https://github.com/JordanBochm" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="site-header__link">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-github"></use></svg>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/jordibochm" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="site-header__link">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-linkedin"></use></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:jordibochmrodriguez@gmail.com" aria-label="Correo electr&oacute;nico" class="site-header__link">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-mail"></use></svg>
+                        <span>Email</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="site-header__link site-header__link--primary" title="Descargar CV (PDF)">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-download"></use></svg>
+                        <span>CV &darr; <span class="visually-hidden">(Documento PDF)</span></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        
-        <section style="margin-top: 1rem;">
-            <h2>Sobre Mí</h2>
-            <p>
-                ¡Hola! Soy un Ingeniero de Software especializado en <strong>Arquitectura Backend</strong> y <strong>Gestión de Datos</strong>, radicado en Toluca. 
-                Mi enfoque principal es construir sistemas escalables, diseñar APIs RESTful robustas con <strong>Laravel (PHP)</strong> y resolver problemas lógicos complejos con <strong>Java</strong>.
-                Me apasiona lo que sucede <em>detrás de escena</em>: la optimización de servidores, la integridad de las bases de datos y la seguridad informática.
+    <main class="container" id="main-content">
+
+        <!-- ============================================ -->
+        <!-- SECTION: SOBRE MI -->
+        <!-- ============================================ -->
+        <section class="section" id="about" aria-labelledby="about-title">
+            <h2 class="section__title" id="about-title">Sobre m&iacute;</h2>
+            <p class="about__text text-justify">
+                Ingeniero en Software por la UAEM&eacute;x (2026), reci&eacute;n egresado, con experiencia en automatizaci&oacute;n e integraci&oacute;n de APIs en log&iacute;stica. Desde marzo de 2026 trabajo en SEKO Logistics como Ejecutivo de Gesti&oacute;n de Activos de TI para clientes corporativos, y desde ese rol he resuelto procesos que se hac&iacute;an de forma manual: desarroll&eacute; en Python un sistema que genera gu&iacute;as de env&iacute;o con la API de Estafeta (ya en producci&oacute;n) y configur&eacute; la integraci&oacute;n de recolecciones de retorno de FedEx en techSHIP. Mi base de desarrollo web viene de Laravel/PHP y SQL, con formaci&oacute;n universitaria y certificaci&oacute;n. Busco un equipo de desarrollo backend donde aportar en integraciones y datos, con c&oacute;digo en producci&oacute;n.
             </p>
-            
-            <div style="margin-top: 2rem; text-align: center; background-color: #1e293b; padding: 2rem; border-radius: 8px; border: 1px solid #334155;">
-                <p style="font-size: 1.05rem; color: #cbd5e1; margin-bottom: 0.5rem;">
-                    "La mejor forma de conocer a un ingeniero es a través de su código. <br>
-                    Te invito a explorar la evolución técnica de mis proyectos en mi repositorio:"
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION: PROYECTOS -->
+        <!-- ============================================ -->
+        <section class="section" id="projects" aria-labelledby="projects-title">
+            <h2 class="section__title" id="projects-title">Proyectos</h2>
+
+            <article class="project-card">
+                <h3 class="project-card__title">Automatizaci&oacute;n de Gu&iacute;as &mdash; Integraci&oacute;n API Estafeta</h3>
+                <p class="project-card__problem text-justify">
+                    El equipo de operaciones en SEKO Logistics generaba gu&iacute;as de env&iacute;o de forma manual a trav&eacute;s del portal web de Estafeta, procesando cada orden individualmente. Con vol&uacute;menes de decenas de &oacute;rdenes diarias, el proceso era lento y propenso a errores de captura.
                 </p>
-                <a href="https://github.com/JordanBochm" class="btn">Ver Código en GitHub</a>
+                <p class="project-card__role text-justify">
+                    <strong>Mi rol:</strong> Dise&ntilde;&eacute; y desarroll&eacute; un sistema en Python que se conecta directamente a la API REST de Estafeta (autenticaci&oacute;n OAuth2 v&iacute;a Azure AD/CIAM), lee las &oacute;rdenes desde archivos Excel (Combined Reports), construye los payloads JSON con validaci&oacute;n de direcciones, genera las gu&iacute;as v&iacute;a POST a <code>/labelrest/v1/wayBills</code>, descarga las etiquetas PDF y produce un reporte de resumen autom&aacute;tico. Tambi&eacute;n implement&eacute; un flujo de 2 pasos (preview &rarr; generaci&oacute;n) para que operaciones pueda revisar antes de enviar.
+                </p>
+                <div class="project-card__tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">OAuth2</span>
+                    <span class="tag">Estafeta API</span>
+                    <span class="tag">pandas</span>
+                    <span class="tag">openpyxl</span>
+                    <span class="tag">requests</span>
+                </div>
+                <!-- TODO(jordi): Completar con métricas reales si se tienen -->
+                <p class="project-card__result">En producci&oacute;n en SEKO Logistics desde septiembre 2026. Reemplaz&oacute; el proceso manual de generaci&oacute;n de gu&iacute;as, reduciendo el tiempo de procesamiento por lote de &oacute;rdenes.</p>
+            </article>
+
+            <article class="project-card">
+                <h3 class="project-card__title">Contribuciones al Sistema PROTEO ATLAS</h3>
+                <p class="project-card__problem text-justify">
+                    El sistema requer&iacute;a atenci&oacute;n continua a incidencias t&eacute;cnicas para mantener su estabilidad y asegurar una buena experiencia a los usuarios.
+                </p>
+                <p class="project-card__role text-justify">
+                    <strong>Mi rol:</strong> Gesti&oacute;n, seguimiento y resoluci&oacute;n de incidencias t&eacute;cnicas (tickets) reportadas por los usuarios, brindando soporte directo y garantizando la estabilidad operativa del sistema mediante el uso de llamadas a procedimientos remotos (RPC).
+                </p>
+                <div class="project-card__tags">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">RPC</span>
+                    <span class="tag">Soporte T&eacute;cnico</span>
+                </div>
+                <p class="project-card__result">Resoluci&oacute;n eficiente de tickets de soporte y garant&iacute;a de la estabilidad operativa del sistema.</p>
+            </article>
+
+            <article class="project-card">
+                <h3 class="project-card__title">Integraci&oacute;n FedEx API &amp; Call Tags en techSHIP</h3>
+                <p class="project-card__problem text-justify">
+                    El equipo de log&iacute;stica requer&iacute;a automatizar las recolecciones de retorno (Call Tags) sin entrar manualmente al portal de FedEx, donde se enfrentaban a errores de sincronizaci&oacute;n y validaci&oacute;n de fechas que bloqueaban la operaci&oacute;n.
+                </p>
+                <p class="project-card__role text-justify">
+                    <strong>Mi rol:</strong> Lider&eacute; la integraci&oacute;n configurando las credenciales en techSHIP y habilitando los m&oacute;dulos <em>Pickup Request API</em> y <em>End of Day Close API</em>. Dise&ntilde;&eacute; el flujo para disparar Call Tags autom&aacute;ticos. Adem&aacute;s, analic&eacute; el comportamiento de la API vs el portal de FedEx, resolviendo los errores de "env&iacute;o no encontrado" mediante el ajuste de fechas (Ship Date) y la sincronizaci&oacute;n forzada (EOD), entregando un SOP (Procedimiento Operativo Est&aacute;ndar) oficial para el equipo.
+                </p>
+                <div class="project-card__tags">
+                    <span class="tag">techSHIP</span>
+                    <span class="tag">FedEx API</span>
+                    <span class="tag">SOP / Tech Writing</span>
+                    <span class="tag">Troubleshooting</span>
+                </div>
+                <p class="project-card__result">Eliminaci&oacute;n total de la carga manual para agendar recolecciones de retorno y creaci&oacute;n del procedimiento est&aacute;ndar de operaci&oacute;n.</p>
+            </article>
+
+            <article class="project-card">
+                <h3 class="project-card__title">App M&oacute;vil QR para Auditor&iacute;a</h3>
+                <p class="project-card__problem text-justify">
+                    Proyecto universitario para digitalizar procesos de auditor&iacute;a mediante lectura de c&oacute;digos QR desde dispositivos m&oacute;viles.
+                </p>
+                <p class="project-card__role text-justify">
+                    <strong>Mi rol:</strong> Desarrollo de la aplicaci&oacute;n m&oacute;vil con Flutter/Dart.
+                </p>
+                <div class="project-card__tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Dart</span>
+                </div>
+                <div class="project-card__links">
+                    <a href="https://github.com/JordanBochm/qr-movil-flutter" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-github"></use></svg>
+                        Ver c&oacute;digo
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION: HABILIDADES -->
+        <!-- ============================================ -->
+        <section class="section" id="skills" aria-labelledby="skills-title">
+            <h2 class="section__title" id="skills-title">Habilidades t&eacute;cnicas</h2>
+            <div class="skills__grid">
+                <div class="skill-group">
+                    <h3 class="skill-group__title">Lenguajes</h3>
+                    <ul class="skill-group__list">
+                        <li class="skill-group__item">Python <span class="skill-group__level">uso diario</span></li>
+                        <li class="skill-group__item">PHP <span class="skill-group__level">uso frecuente</span></li>
+                        <li class="skill-group__item">Java <span class="skill-group__level">uso frecuente</span></li>
+                        <li class="skill-group__item">SQL <span class="skill-group__level">uso frecuente</span></li>
+                        <li class="skill-group__item">Dart <span class="skill-group__level">proyectos</span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group__title">Frameworks / Libs</h3>
+                    <ul class="skill-group__list">
+                        <li class="skill-group__item">Laravel <span class="skill-group__level">uso frecuente</span></li>
+                        <li class="skill-group__item">requests / REST <span class="skill-group__level">uso diario</span></li>
+                        <li class="skill-group__item">pandas / openpyxl <span class="skill-group__level">uso diario</span></li>
+                        <li class="skill-group__item">Next.js <span class="skill-group__level">soporte</span></li>
+                        <li class="skill-group__item">Flutter <span class="skill-group__level">proyectos</span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group__title">Bases de datos</h3>
+                    <ul class="skill-group__list">
+                        <li class="skill-group__item">MySQL <span class="skill-group__level">uso frecuente</span></li>
+                        <li class="skill-group__item">Supabase <span class="skill-group__level">soporte</span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group__title">Herramientas</h3>
+                    <ul class="skill-group__list">
+                        <li class="skill-group__item">Git / GitHub <span class="skill-group__level">uso diario</span></li>
+                        <li class="skill-group__item">Postman <span class="skill-group__level">uso frecuente</span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group__title">Integraciones</h3>
+                    <ul class="skill-group__list">
+                        <li class="skill-group__item">API Estafeta (REST)</li>
+                        <li class="skill-group__item">API FedEx</li>
+                        <li class="skill-group__item">OAuth2 / Azure AD</li>
+                        <li class="skill-group__item">Techship</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group__title">Conceptos</h3>
+                    <ul class="skill-group__list">
+                        <li class="skill-group__item">APIs REST</li>
+                        <li class="skill-group__item">Arquitectura MVC</li>
+                        <li class="skill-group__item">ETL / Automatizaci&oacute;n</li>
+                        <li class="skill-group__item">Seguridad inform&aacute;tica</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <section style="margin-top: 3rem;">
-            <h2>Certificaciones y Formación Continua</h2>
-            <p>
-                La tecnología nunca se detiene, y yo tampoco. Mi misión profesional después de la universidad es mantener una <strong>especialización constante</strong>. 
-                A continuación, presento las certificaciones que he obtenido recientemente para fortalecer mi perfil como desarrollador Backend:
-            </p>
+        <!-- ============================================ -->
+        <!-- SECTION: FORMACION -->
+        <!-- ============================================ -->
+        <section class="section" id="education" aria-labelledby="education-title">
+            <h2 class="section__title" id="education-title">Formaci&oacute;n</h2>
 
-            <div class="roadmap-grid">
-                <div class="course-card">
-                    <span class="course-title">Programación Backend en PHP y Laravel</span>
-                    <span class="course-tech">Udemy</span>
-                    <p>Dominio de fundamentos Backend, arquitectura MVC, migraciones de base de datos y creación de APIs RESTful escalables.</p>
+            <div class="education__item">
+                <h3 class="education__title">Ingenier&iacute;a en Software</h3>
+                <p class="education__meta">Universidad Aut&oacute;noma del Estado de M&eacute;xico (UAEM&eacute;x) &middot; 2026</p>
+                <div>
+                    <a href="Carta_pasante.pdf" target="_blank" rel="noopener noreferrer" class="link--inline" title="Carta de Pasante (PDF)">
+                        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-download"></use></svg>
+                        Ver Carta de Pasante (PDF)
+                    </a>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">Evidencia documental de mis cursos y certificaciones:</p>
-                <a href="certificaciones.pdf" target="_blank" class="btn" style="background-color: #1e293b; color: #94a3b8; border: 1px solid #334155; font-size: 0.9rem;">
-                    Ver Credenciales y Diplomas (PDF)
-                </a>
+            <div class="education__item">
+                <h3 class="education__title">Certificaciones</h3>
+                <div class="certification__line">
+                    Programaci&oacute;n Backend en PHP y Laravel
+                    <span class="certification__platform">Udemy</span>
+                </div>
+                <!-- TODO(jordi): Agregar fecha y enlace a la credencial cuando esten disponibles -->
+                <div>
+                    <a href="certificaciones.pdf" target="_blank" rel="noopener noreferrer" class="link--inline" title="Certificaciones (PDF)">
+                        Ver credencial (PDF) &rarr;
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section style="margin-top: 3rem;">
-            <h2>Trayectoria Académica</h2>
-            <p>
-                Durante mi formación universitaria, construí una base técnica sólida para afrontar proyectos de alta complejidad. 
-                A continuación, presento las materias que han sido pilares en mi desarrollo y en las que continúo profundizando, 
-                con un enfoque especializado en <strong>Arquitectura de Sistemas</strong>, <strong>Gestión de Datos</strong> y <strong>Lógica Backend</strong>.
-            </p>
-            
-            <div class="roadmap-grid">
-                
-                <div class="course-card">
-                    <span class="course-title">Sistemas Distribuidos</span>
-                    <span class="course-tech">Arquitectura / Redes</span>
-                    <p>Análisis de concurrencia, escalabilidad y protocolos de comunicación en redes complejas.</p>
-                </div>
+    </main>
 
-                <div class="course-card">
-                    <span class="course-title">Bases de Datos Avanzadas</span>
-                    <span class="course-tech">SQL / Minería de Datos</span>
-                    <p>Diseño de esquemas relacionales, optimización de consultas y gestión de Datawarehouses.</p>
-                </div>
-
-                <div class="course-card">
-                    <span class="course-title">Algoritmos y Complejidad</span>
-                    <span class="course-tech">Java / Lógica</span>
-                    <p>Implementación de Algoritmos Genéticos y heurísticas para la optimización de procesos industriales.</p>
-                </div>
-
-                <div class="course-card">
-                    <span class="course-title">Seguridad Informática y Auditoría</span>
-                    <span class="course-tech">Ciberseguridad / Riesgos</span>
-                    <p>Evaluación de vulnerabilidades del sistema, protocolos de riesgo e integridad de la información.</p>
-                </div>
-
-                <div class="course-card">
-                    <span class="course-title">Ingeniería Web</span>
-                    <span class="course-tech">PHP / Laravel</span>
-                    <p>Desarrollo Full-stack con un fuerte enfoque en arquitectura MVC y diseño de APIs.</p>
-                </div>
-
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">¿Necesitas ver el detalle de créditos y calificaciones?</p>
-                <a href="mapa_curricular.pdf" target="_blank" class="btn" style="background-color: #1e293b; color: #94a3b8; border: 1px solid #334155; font-size: 0.9rem;">
-                    Ver Mapa Curricular Completo (PDF)
-                </a>
-            </div>
-
-        </section>
-
-        <div class="wip-note">
-            <strong>Estado: Refactorizando en Producción</strong><br><br>
-            Esta página sigue la filosofía del buen software: nunca está "terminada", solo está en su mejor versión <em>por ahora</em>.
-            <br>
-            Siempre estoy agregando nuevos proyectos, optimizando código o aprendiendo un nuevo framework.
-            <br>
-            <span style="color: #94a3b8; font-style: italic;">(Si encuentras un error, digamos que es una "feature" no documentada).</span>
-            <br><br>
-            <strong>¡Vuelve pronto para ver el siguiente <code>git commit</code>!</strong>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Jordi Bochm. Alojado en GitHub Pages.</p>
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+        <p class="site-footer__note">
+            &iexcl;Vuelve pronto para ver el siguiente <code>git commit</code>!
+        </p>
+        <p>&copy; 2026 Jordi Bochm &middot; Alojado en GitHub Pages</p>
     </footer>
 
+    <!-- JS interactivo -->
+    <script src="assets/js/main.js" defer></script>
 </body>
+
 </html>

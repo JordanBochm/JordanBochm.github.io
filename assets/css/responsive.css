@@ -1,0 +1,105 @@
+/**
+ * @file responsive.css
+ * @description Maneja los breakpoints de responsividad y las preferencias de usuario para el sistema (motion, dark mode).
+ * @note Las media queries utilizan los mismos tokens y convencion BEM.
+ */
+
+/* ============================================
+   RESPONSIVE DESIGN & ACCESSIBILITY
+   ============================================ */
+
+/* Breakpoints */
+@media (max-width: 768px) {
+    .site-header {
+        padding: var(--space-12) var(--space-4) var(--space-8);
+    }
+    
+    .site-header__links {
+        gap: var(--space-2);
+    }
+    
+    .site-header__link {
+        font-size: 0.8rem;
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    .section {
+        padding: var(--space-10) 0;
+    }
+    
+    .skills__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        padding: var(--space-5);
+    }
+    
+    .theme-toggle {
+        right: var(--space-3);
+        top: var(--space-3);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Desactiva la justificacion en pantallas pequenas para evitar 'rios' de espacio blanco (WCAG) */
+    .text-justify {
+        -webkit-hyphens: none;
+        hyphens: none;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header__name {
+        font-size: 1.75rem;
+    }
+    
+    .site-header__role {
+        font-size: 0.85rem;
+    }
+    
+    .site-header__link:not(.site-header__link--primary) span {
+        display: none;
+    }
+    
+    .site-header__link {
+        padding: var(--space-2);
+    }
+    
+    .container {
+        padding: 0 var(--space-4);
+    }
+    
+    .skill-group__item {
+        flex-wrap: wrap;
+    }
+}
+
+/* ============================================
+   PREFERS REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: no-preference) {
+    .section {
+        animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
